@@ -57,7 +57,7 @@
 
  Retrieves the generated comic panels for a specific artwork ID.
 
-- **URL**: `https://llamagen.ai/api/artworks/{id}`
+- **URL**: `https://llamagen.ai/api/openapi/artworks/{id}`
 - **Method**: `GET`
 - **Headers**:
   - `Authorization`: `Bearer YOUR_API_KEY`
