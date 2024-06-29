@@ -23,6 +23,8 @@
 - **Request Body**:
   - `prompt` (string): The prompt for generating the comic artwork. Accepted values: `"running"`, `"flexibility"`, or `"flying"`.
   - `imageUrl` (string): The URL of the image to use as a reference for generating the comic artwork.
+  - `gender` (string): The gender of the person in the image. Accepted values: "male", "female", "other".
+  - `age` (number): The age of the person in the image. Must be a number between 0 and 150.
 
 #### Example Request
 
@@ -30,6 +32,8 @@
  const formdata = new FormData();
  formdata.append("prompt", "running");
  formdata.append("imageUrl", "https://example.com/image.png");
+ formdata.append("gender", "male");
+ formdata.append("age", 30);
 
  const headers = new Headers();
  headers.append("Authorization", `Bearer ${API_KEY}`);
