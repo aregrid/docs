@@ -16,7 +16,7 @@
 
  Generates a new comic artwork based on the provided prompt and image URL.
 
-- **URL**: `https://www.llamagen.ai/api/openapi/artworks`
+- **URL**: `https://llamagen.ai/api/openapi/artworks`
 - **Method**: `POST`
 - **Headers**:
   - `Authorization`: `Bearer YOUR_API_KEY`
