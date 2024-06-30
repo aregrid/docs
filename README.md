@@ -38,7 +38,7 @@
  const headers = new Headers();
  headers.append("Authorization", `Bearer ${API_KEY}`);
 
- const res = await fetch("https://www.llamagen.ai/api/openapi/artworks", {
+ const res = await fetch("https://llamagen.ai/api/openapi/artworks", {
    method: "POST",
    body: formdata,
    headers: headers,
