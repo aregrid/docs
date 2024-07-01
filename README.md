@@ -45,6 +45,39 @@
  });
  ```
 
+```bash
+curl -X POST "https://llamagen.ai/api/openapi/artworks" \
+-H "Authorization: Bearer YOUR_API_KEY" \
+-F "prompt=flexibility" \
+-F "imageUrl=https://example.com/image.png" \
+-F "gender=male" \
+-F "age=12"
+```
+
+```python
+import requests
+import json
+base_url = "https://llamagen.ai"
+def post_artwork(api_token: str, prompt: str, imageUrl: str, gender: str, age: int) -> dict:
+    api_url = f"{base_url}/api/openapi/artworks"
+    headers = {
+        'Authorization': f'Bearer {api_token}'
+    }
+    data = {
+        'prompt': prompt,
+        'imageUrl': imageUrl,
+        'gender': gender,
+        'age': age
+    }
+
+    response = requests.post(api_url, headers=headers, data=data)
+
+    if response.status_code == 200:
+        return response.json()
+    else:
+        response.raise_for_status()
+```
+
 #### Example Response
 
  ```json
@@ -78,6 +111,36 @@
    headers: headers,
  });
  ```
+
+```bash
+curl -X GET "https://llamagen.ai/api/openapi/artworks/YOUR_ARTWORK_ID" \
+-H "Authorization: Bearer YOUR_API_KEY"
+```
+
+```python
+import requests
+import json
+base_url = "https://llamagen.ai"
+def get_artwork(artwork_id, api_token):
+    api_url = f"{base_url}/api/openapi/artworks"
+    headers = {
+        'Authorization': f'Bearer {api_token}',
+    }
+
+    response = requests.get(f"{api_url}/{artwork_id}", headers=headers)
+
+    if response.status_code == 401:
+        print("Unauthorized request.")
+        return None
+    elif response.status_code == 404:
+        print("Artwork not found.")
+        return None
+    elif response.status_code == 500:
+        print("Server error.")
+        return None
+
+    return response.json()
+```
 
 #### Example Response
 
