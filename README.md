@@ -21,7 +21,7 @@
 - **Headers**:
   - `Authorization`: `Bearer YOUR_API_KEY`
 - **Request Body**:
-  - `prompt` (string): The prompt for generating the comic artwork. Accepted values: `"running"`, `"flexibility"`, or `"flying"`.
+  - `prompt` (string): The prompt for generating the comic artwork. Accepted values: `running`, `flexibility`,  `flying`, `laser_speed`, `laser_flexibility`,or `laser_flying`.
   - `imageUrl` (string): The URL of the image to use as a reference for generating the comic artwork.
   - `gender` (string): The gender of the person in the image. Accepted values: "male", "female", "other".
   - `age` (number): The age of the person in the image. Must be a number between 0 and 150.
